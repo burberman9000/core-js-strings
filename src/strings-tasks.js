@@ -363,8 +363,12 @@ function isPalindrome(/* str */) {
  *   findLongestWord('A long and winding road') => 'winding'
  *   findLongestWord('No words here') => 'words'
  */
-function findLongestWord(/* sentence */) {
-  throw new Error('Not implemented');
+function findLongestWord(sentence) {
+  const result = sentence.split(' ').reduce((b, a) => {
+    return a.length > b.length ? a : b;
+  });
+
+  return result;
 }
 
 /**
@@ -377,8 +381,13 @@ function findLongestWord(/* sentence */) {
  *   reverseWords('Hello World') => 'olleH dlroW'
  *   reverseWords('The Quick Brown Fox') => 'ehT kciuQ nworB xoF'
  */
-function reverseWords(/* str */) {
-  throw new Error('Not implemented');
+function reverseWords(str) {
+  const reversedWord = str
+    .split(' ')
+    .map((word) => word.split('').reverse().join(''))
+    .join(' ');
+
+  return reversedWord;
 }
 
 /**
@@ -392,8 +401,14 @@ function reverseWords(/* str */) {
  *   invertCase('JavaScript is Fun') => 'jAVAsCRIPT IS fUN'
  *   invertCase('12345') => '12345'
  */
-function invertCase(/* str */) {
-  throw new Error('Not implemented');
+function invertCase(str) {
+  const invertedString = str
+    .split('')
+    .map((word) =>
+      word === word.toUpperCase() ? word.toLowerCase() : word.toUpperCase()
+    )
+    .join('');
+  return invertedString;
 }
 
 /**
@@ -409,8 +424,9 @@ function invertCase(/* str */) {
  *   getStringFromTemplate('John','Doe') => 'Hello, John Doe!'
  *   getStringFromTemplate('Chuck','Norris') => 'Hello, Chuck Norris!'
  */
-function getStringFromTemplate(/* firstName, lastName */) {
-  throw new Error('Not implemented');
+function getStringFromTemplate(firstName, lastName) {
+  const result = `Hello, ${firstName} ${lastName}!`;
+  return result;
 }
 
 /**
@@ -423,8 +439,10 @@ function getStringFromTemplate(/* firstName, lastName */) {
  *   extractNameFromTemplate('Hello, John Doe!') => 'John Doe'
  *   extractNameFromTemplate('Hello, Chuck Norris!') => 'Chuck Norris'
  */
-function extractNameFromTemplate(/* value */) {
-  throw new Error('Not implemented');
+function extractNameFromTemplate(value) {
+  const index = value.indexOf(', ') + 2;
+  const result = value.slice(index, value.length - 1);
+  return result;
 }
 
 /**
@@ -438,8 +456,9 @@ function extractNameFromTemplate(/* value */) {
  *   unbracketTag('<span>') => 'span'
  *   unbracketTag('<a>') => 'a'
  */
-function unbracketTag(/* str */) {
-  throw new Error('Not implemented');
+function unbracketTag(str) {
+  const result = str.match(/[^<>]/g).join('');
+  return result;
 }
 
 /**
@@ -457,8 +476,10 @@ function unbracketTag(/* str */) {
  *   ],
  *   'info@gmail.com' => ['info@gmail.com']
  */
-function extractEmails(/* str */) {
-  throw new Error('Not implemented');
+function extractEmails(str) {
+  const result = str.split(';');
+
+  return result;
 }
 
 /**
@@ -480,7 +501,6 @@ function extractEmails(/* str */) {
 function encodeToRot13(/* str */) {
   throw new Error('Not implemented');
 }
-
 /**
  * Returns playid card id.
  *
@@ -506,6 +526,24 @@ function encodeToRot13(/* str */) {
  *   'K♠' => 51
  */
 function getCardId(/* value */) {
+  // const suits = ['♣', '♦', '♥', '♠'];
+  // const cards = [
+  //   'A',
+  //   '2',
+  //   '3',
+  //   '4',
+  //   '5',
+  //   '6',
+  //   '7',
+  //   '8',
+  //   '9',
+  //   '10',
+  //   'J',
+  //   'Q',
+  //   'K',
+  // ];
+  // const cardValue = cards.slice(0, 1);
+  // return cardValue;
   throw new Error('Not implemented');
 }
 
